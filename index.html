@@ -92,7 +92,9 @@
 
       .rc-logo{
         width: 16vw; max-width: 80px;
-        margin: 0 auto;
+      }
+      #logo{
+        text-align:left;
       }
 
       .icon{
@@ -120,7 +122,7 @@
 
     <div id="app">
       <div>
-        <img src="static/rc.svg" class="rc-logo"/>
+        <div id="logo"><img src="static/rc.svg" class="rc-logo"/></div>
 
         <div id="welcome">
           <h1>Welcome Back</h1>
@@ -145,6 +147,7 @@
     console.log("webapp is installed");
     document.getElementById('welcome').style.display = 'none';
     document.getElementById('redirect').style.display = 'block';
+    document.getElementById('logo').style.textAlign = 'center';
 
     setTimeout(function(){
       window.location = "http://doorbot.recurse.com";
