@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    <title>RC Doorbot</title>
+
+    <link href="/static/doorbot_16.png" rel="icon" type="image/png" sizes="16x16">
+    <link href="/static/doorbot_32.png" rel="icon" type="image/png" sizes="32x32">
+    <link href="/static/doorbot_48.png" rel="icon" type="image/png" sizes="48x48">
+
+    <!-- Android  -->
+    <meta name="theme-color" content="#69c258">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link href="/static/doorbot_192.png" rel="icon" sizes="192x192">
+    <link href="/static/doorbot_128.png" rel="icon" sizes="128x128">
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-title" content="RC Doorbot">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link href="/static/doorbot_80.png" rel="apple-touch-icon">
+    <link href="/static/doorbot_87.png" rel="apple-touch-icon" sizes="87x87">
+    <link href="/static/doorbot_114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="/static/doorbot_120.png" rel="apple-touch-icon" sizes="120x120">
+    <link href="/static/doorbot_180.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="/static/doorbot_320x480.png" rel="apple-touch-startup-image">
+
+    <!-- Windows  -->
+    <meta name="msapplication-navbutton-color" content="#69c258">
+    <meta name="msapplication-TileColor" content="#69c258">
+    <meta name="msapplication-TileImage" content="/static/doorbot_144.png">
+
+    <!-- Pinned Sites  -->
+    <meta name="application-name" content="RC Doorbot">
+    <meta name="msapplication-tooltip" content="Tooltip Text">
+    <meta name="msapplication-starturl" content="/">
+
+    <!-- Tap highlighting  -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Orientation  -->
+    <meta name="screen-orientation" content="portrait">
+
+    <style type="text/css">
+      @font-face {
+        font-family: InterMedium;
+        src: url('static/Inter-Medium.woff');
+        src: url('static/Inter-Medium.woff2') format('woff2'),
+             url('static/Inter-Medium.woff') format('woff');
+      }
+
+      *{ box-sizing: border-box; }
+
+      body{
+        margin: 0; padding: 0;
+
+        background-color: #69c258;
+
+        font-family: InterMedium, sans-serif;
+        font-kerning: auto;
+        letter-spacing: -0.5pt;
+        font-feature-settings: normal;
+        font-size: 14pt;
+        color: #fff;
+      }
+
+      #app{
+        width: 100vw; max-width: 400px;
+        height: 80vh;
+
+        margin: 0 auto; padding: 2em;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+      }
+
+      h1{
+        font-size: 1.6em;
+        letter-spacing: -0.05em;
+        text-align: left;
+      }
+
+      p{
+        text-align: left;
+      }
+
+      .rc-logo{
+        width: 16vw; max-width: 80px;
+        margin: 0 auto;
+      }
+
+      .icon{
+        height: 1.5em;
+        vertical-align: bottom;
+      }
+
+      .btn{
+        display: inline-block;
+        padding: 0.5em 1.2em;
+        text-decoration: none;
+        border-radius: 2em;
+        background: rgba(255,255,255,0.8);
+        color: #69c258;
+        margin: 0 auto;
+      }
+
+      #redirect{
+        margin-top: 1rem;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="app">
+      <div>
+        <img src="static/rc.svg" class="rc-logo"/>
+
+        <div id="welcome">
+          <h1>Welcome Back</h1>
+          <p>Install this page on your home screen for quick and easy access to Doorbot.</p>
+          <p>Tap the share icon <img src="static/share.svg" class="icon"/> then select "Add to Home Screen" or press button below.</p>
+          <p><a href="http://doorbot.recurse.com" class="btn">Login</a></p>
+        </div>
+
+        <div id="redirect">
+          <a href="http://doorbot.recurse.com" class="btn">Login</a>
+        </div>
+
+      </div>
+    </div>
+
+<script type="text/javascript">
+  var isInStandaloneMode = function(){
+    return (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone);
+  }
+
+  if (isInStandaloneMode()) {
+    console.log("webapp is installed");
+    document.getElementById('welcome').style.display = 'none';
+    document.getElementById('redirect').style.display = 'block';
+
+    setTimeout(function(){
+      window.location = "http://doorbot.recurse.com";
+    }, 300);
+
+  } else {
+    console.log("webapp is not installed");
+  }
+</script>
+</body>
+</html>
