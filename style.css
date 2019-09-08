@@ -1,0 +1,71 @@
+@font-face {
+  font-family: InterMedium;
+  src: url('static/Inter-Medium.woff');
+  src: url('static/Inter-Medium.woff2') format('woff2'),
+       url('static/Inter-Medium.woff') format('woff');
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0; padding: 0;
+
+  background-color: #69c258;
+
+  font-family: InterMedium, sans-serif;
+  font-kerning: auto;
+  letter-spacing: -0.5pt;
+  font-feature-settings: normal;
+  font-size: 14pt;
+  color: #fff;
+}
+
+#app{
+  width: 100vw; max-width: 400px;
+  height: 80vh;
+
+  margin: 0 auto; padding: 2em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+h1{
+  font-size: 1.6em;
+  letter-spacing: -0.05em;
+  text-align: left;
+}
+
+p{
+  text-align: left;
+}
+
+.rc-logo{
+  width: 16vw; max-width: 80px;
+}
+#logo{
+  text-align:left;
+}
+
+.icon{
+  height: 1.5em;
+  vertical-align: bottom;
+}
+
+.btn{
+  display: inline-block;
+  padding: 0.5em 1.2em;
+  text-decoration: none;
+  border-radius: 2em;
+  background: rgba(255,255,255,0.8);
+  color: #69c258;
+  margin: 0 auto;
+}
+
+#redirect{
+  margin-top: 1rem;
+  display: none;
+}
